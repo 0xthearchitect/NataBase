@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray_background">
+
+    <!-- Conteúdo principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/light_gray_background">
+
+        <!-- Top Bar Melhorada -->
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/deep_brown"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="20dp"
+            android:elevation="4dp">
+
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_menu"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/white"
+                android:padding="12dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Configurações"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:letterSpacing="0.02" />
+
+        </LinearLayout>
+
+        <!-- Conteúdo das configurações -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="20dp"
+            android:clipToPadding="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Seção Email -->
+                <LinearLayout
+                    style="@style/ConfigCard"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Configurações de Email"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/deep_brown"
+                        android:drawablePadding="8dp"
+                        android:drawableStart="@drawable/ic_email"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/textViewEmailAtual"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Email atual: Não definido"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_gray"
+                        android:layout_marginBottom="12dp"
+                        android:lineSpacingExtra="4dp" />
+
+                    <!-- Substituindo TextInputLayout por EditText com estilo melhorado -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email de destino"
+                            android:textSize="14sp"
+                            android:textColor="@color/deep_brown"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <EditText
+                            android:id="@+id/editTextEmailDestino"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Digite o email de destino"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:background="@drawable/edit_text_background"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/dark_gray" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnSalvarEmailDestino"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Salvar Email"
+                        android:backgroundTint="@color/deep_brown"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/card_background" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="4dp">
+
+                        <Switch
+                            android:id="@+id/switchEmailAuto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:thumbTint="@color/deep_brown"
+                            android:trackTint="@color/caramel" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Envio automático de email"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Seção Diretório -->
+                <LinearLayout
+                    style="@style/ConfigCard"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Diretório de Exportação"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/deep_brown"
+                        android:drawablePadding="8dp"
+                        android:drawableStart="@drawable/ic_folder"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/textViewDiretorioAtual"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Diretório atual:"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_gray"
+                        android:lineSpacingExtra="4dp"
+                        android:layout_marginBottom="16dp"
+                        android:padding="12dp"
+                        android:background="@color/light_brown_bg"
+                        android:drawablePadding="8dp" />
+
+                    <Button
+                        android:id="@+id/btnAlterarDiretorio"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Alterar Diretório"
+                        android:backgroundTint="@color/deep_brown"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/card_background" />
+
+                </LinearLayout>
+
+                <!-- Seção Cache -->
+                <LinearLayout
+                    style="@style/ConfigCard">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Limpeza de Cache"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/deep_brown"
+                        android:drawablePadding="8dp"
+                        android:drawableStart="@drawable/ic_clear"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Remove todos os dados temporários da aplicação"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_gray"
+                        android:layout_marginBottom="16dp"
+                        android:lineSpacingExtra="4dp" />
+
+                    <Button
+                        android:id="@+id/btnLimparCache"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Limpar Cache"
+                        android:backgroundTint="@color/red"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/card_background" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/navigation_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

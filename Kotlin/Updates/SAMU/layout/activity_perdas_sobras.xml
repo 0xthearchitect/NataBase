@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/caramel_background"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/deep_brown"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="@string/voltar"
+            android:layout_marginEnd="8dp"
+            android:tint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Perdas e Sobras"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/natabase"
+                android:src="@drawable/natabase" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Produtos com produção (incluindo produções anteriores)"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProdutos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Confirmar e Enviar Email"
+        android:textSize="18sp"
+        android:background="@drawable/button_login"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

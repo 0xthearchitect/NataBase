@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Imagem de fundo desfocada -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Produto Background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/padariabackground_login" />
+
+        <!-- Overlay para melhor legibilidade -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/overlay_brown_translucent" />
+
+        <!-- Conteúdo do produto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:id="@+id/tvProducoesAnteriores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@color/deep_brown_translucent"
+                android:padding="4dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/produtoNome"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="0.4"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="Produto"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <!-- Display da quantidade atual -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvQuantidadeAtual"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:textColor="@color/deep_brown"
+                    android:textStyle="bold"
+                    android:background="@drawable/quantidade_background"
+                    android:padding="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="4">
+
+                <Button
+                    android:id="@+id/btnMenos10"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="-10"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/button_negative"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btnMenos1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="-1"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/button_negative"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btnMais1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="+1"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/button_positive"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btnMais10"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="+10"
+                    android:textSize="16sp"
+                    android:background="@drawable/button_positive"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnConfirmarProduto"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:text="Confirmar Produção"
+                android:textSize="16sp"
+                android:background="@drawable/button_confirm"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

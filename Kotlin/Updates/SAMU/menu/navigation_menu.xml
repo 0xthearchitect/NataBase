@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+    android:title="Home" />
+
+    <item
+        android:id="@+id/nav_producao"
+        android:icon="@drawable/ic_producao"
+        android:title="Produção" />
+
+    <item
+        android:id="@+id/nav_resumo"
+        android:icon="@drawable/ic_summary"
+        android:title="Resumo" />
+
+    <item
+        android:id="@+id/nav_inventario"
+        android:icon="@drawable/ic_inventario"
+        android:title="Inventário" />
+
+    <item android:title="Configurações">
+        <menu>
+            <item
+                android:id="@+id/nav_configuracoes"
+                android:icon="@drawable/ic_settings"
+                android:title="Configurações" />
+        </menu>
+    </item>
+
+</menu>
